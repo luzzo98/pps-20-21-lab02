@@ -1,5 +1,5 @@
 package Exercise
 
-object Task1 extends App {
+object HelloScala extends App {
   print("Hello Scala!")
 }
