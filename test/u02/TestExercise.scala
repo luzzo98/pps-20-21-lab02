@@ -4,6 +4,7 @@ import Exercise.Parity._
 import Exercise.Predicate._
 import Exercise.Currying._
 import Exercise.FunctionalComposition._
+import Exercise.Fibonacci._
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
@@ -76,5 +77,24 @@ class TestExercise {
 
     assertEquals(5,genericCompose(ifTrueGiveFive,isHello)("Hello"))
     assertEquals(0,genericCompose(ifTrueGiveFive,isHello)("Nope"))
+  }
+
+  // Test exercise 6
+  @Test def testFib(): Unit = {
+    assertEquals(0,fib(0))
+    assertEquals(1,fib(1))
+    assertEquals(1,fib(2))
+    assertEquals(2,fib(3))
+    assertEquals(3,fib(4))
+    assertEquals(55,fib(10))
+  }
+
+  @Test def testTailFib(): Unit = {
+    assertEquals(0,tailFib(0))
+    assertEquals(1,tailFib(1))
+    assertEquals(1,tailFib(2))
+    assertEquals(2,tailFib(3))
+    assertEquals(3,tailFib(4))
+    assertEquals(55,tailFib(10))
   }
 }

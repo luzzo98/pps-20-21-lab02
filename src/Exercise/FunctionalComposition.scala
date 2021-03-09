@@ -2,7 +2,7 @@ package Exercise
 
 import org.junit.jupiter.api.Assertions._
 
-object FunctionalComposition extends App {
+object FunctionalComposition {
 
   def compose(f: Int => Int, g: Int => Int): Int => Int = {
     (t) => f(g(t))
