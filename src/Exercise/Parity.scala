@@ -1,8 +1,6 @@
 package Exercise
 
-import org.junit.jupiter.api.Assertions._
-
-object Parity extends App {
+object Parity {
 
   val lambdaParity : Int => String = {
     case n if n%2==0 => "even"
@@ -13,12 +11,4 @@ object Parity extends App {
     case true => "even"
     case _ => "odd"
   }
-
-  assertEquals("odd",lambdaParity(3))
-  assertEquals("even",lambdaParity(2))
-  assertEquals("odd",lambdaParity(-1))
-
-  assertEquals("odd",methodParity(3))
-  assertEquals("even",methodParity(2))
-  assertEquals("odd",methodParity(-1))
 }
