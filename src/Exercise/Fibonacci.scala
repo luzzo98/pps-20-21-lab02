@@ -4,6 +4,8 @@ import scala.annotation.tailrec
 
 object Fibonacci {
 
+  //in this case we don't have a tail recursion because you do not get the result of the calculation until you have
+  // returned from each recursive call
   def fib(n: Int): Int = n match {
     case 0 => 0
     case 1 => 1
