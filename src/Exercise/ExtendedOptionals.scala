@@ -1,7 +1,5 @@
 package Exercise
 
-import org.junit.jupiter.api.Assertions._
-
 object ExtendedOptionals extends App {
 
   sealed trait Option[A] // An Optional data type
