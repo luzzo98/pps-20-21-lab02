@@ -1,4 +1,4 @@
-package u02.TestExercise
+package TestExercise
 
 import Exercise.GeometricShapes.Shape._
 
