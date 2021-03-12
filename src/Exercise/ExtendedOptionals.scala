@@ -28,22 +28,23 @@ object ExtendedOptionals extends App {
       case Some(a) => a
     }
 
-    def filter[A](opt: Option[A])(f: Option[A] => Boolean): Option[A] = opt match {
-      case opt =>
-        if (f(opt))
-          opt
-        else
-          None()
+    def filter[A](opt: Option[A])(f: Option[A] => Boolean): Option[A] = f(opt) match {
+      case true => opt
+      case false => None()
     }
 
-    def map[A, B](opt: Option[A])(f: A => B): Option[B] = opt match {
+    def map[A,B](opt: Option[A])(f: A => B): Option[B] = opt match {
       case Some(a) => Some(f(a))
       case _ => None()
     }
 
-    def map2[A, B](opt1: Option[A])(opt2: Option[B]): Option[String] = (opt1, opt2) match {
+    def map2WithStrings[A,B](opt1: Option[A])(opt2: Option[B]): Option[String] = (opt1, opt2) match {
       case (Some(a), Some(b)) => Some(a.toString + "+" + b.toString)
       case _ => None()
+    }
+
+    def map2[A,B,C](opt1: Option[A])(opt2: Option[B])(f: (A, B) => C): C = (opt1, opt2) match {
+      case (Some(a), Some(b)) => f(a,b)
     }
   }
 }
