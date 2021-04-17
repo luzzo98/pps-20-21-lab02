@@ -43,8 +43,9 @@ object ExtendedOptionals extends App {
       case _ => None()
     }
 
-    def map2[A,B,C](opt1: Option[A])(opt2: Option[B])(f: (A, B) => C): C = (opt1, opt2) match {
-      case (Some(a), Some(b)) => f(a,b)
+    def map2[A,B,C](opt1: Option[A])(opt2: Option[B])(f: (A, B) => C): Option[C] = (opt1, opt2) match {
+      case (Some(a), Some(b)) => Some(f(a,b))
+      case _ => None()
     }
   }
 }

@@ -1,6 +1,5 @@
 package TestExercise
 
-import Exercise.ExtendedOptionals
 import Exercise.ExtendedOptionals.Option._
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
@@ -26,9 +25,9 @@ class TestExercise8 {
   }
 
   @Test def testMap2(): Unit = {
-    assertEquals("true5", map2(Some(true))(Some(5))(_.toString + _.toString))
-    assertEquals(Some(true),map2(Some(false))(Some("dummy"))((a,_) => Some(!a)))
-    assertEquals(None(),map2(Some(5))(Some(false))((a,b) => if (a>3 && b) true else None()))
-    assertEquals(10,map2(Some(5))(Some(2))((a,b) => if (a > 0) a*b else 0))
+    assertEquals(Some("true5"), map2(Some(true))(Some(5))(_.toString + _.toString))
+    assertEquals(Some(true),map2(Some(false))(Some("dummy"))((a,_) => !a))
+    assertEquals(None(),map2(Some(5))(None())((a,_) => if (a>3) true else false))
+    assertEquals(Some(10),map2(Some(5))(Some(2))((a,b) => if (a > 0) a*b else 0))
   }
 }
